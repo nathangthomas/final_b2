@@ -1,0 +1,16 @@
+<h1>Courses Index Page </h1>
+<hr>
+
+
+<% @courses.each do |course|%>
+  <section id="course-<%= course.id %>">
+    <h2><%= course.name %></h2>
+        <ul>
+          <li><% course.ordered_by_highest_grade.each do |student| %></li>
+            <ul>
+              <li><%= "#{student.name}: #{student.grade}" %></li>
+            </ul>
+            <% end  %>
+        </ul>
+  </section>
+<% end %>

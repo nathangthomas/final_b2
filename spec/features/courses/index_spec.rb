@@ -31,14 +31,15 @@ RSpec.describe 'Course Index Page'do
 
       it 'I see each course name and each student in the course orderd from highest to lowest grade' do
 
-        within "#course-#{@course_1}" do
+        within "#course-#{@course_1.id}" do
 
           expect(page).to have_content(@course_1.name)
           expect(page).to have_content(@student_1.name)
           expect(page).to have_content(@student_2.name)
+
         end
 
-        within "#course-#{@course_2}" do
+        within "#course-#{@course_2.id}" do
 
           expect(page).to have_content(@course_2.name)
           expect(page).to have_content(@student_1.name)
@@ -47,7 +48,7 @@ RSpec.describe 'Course Index Page'do
 
         end
 
-        within "#course-#{@course_3}" do
+        within "#course-#{@course_3.id}" do
 
           expect(page).to have_content(@course_3.name)
           expect(page).to have_content(@student_1.name)
@@ -56,11 +57,11 @@ RSpec.describe 'Course Index Page'do
 
         end
 
-        within "#course-#{@course_4}" do
+        within "#course-#{@course_4.id}" do
 
           expect(page).to have_content(@course_4.name)
         end
-      end 
+      end
     end
   end
 end

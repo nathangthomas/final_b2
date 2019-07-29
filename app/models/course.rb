@@ -4,4 +4,7 @@ class Course < ApplicationRecord
   has_many :student_courses
   has_many :students, through: :student_courses
 
+  def ordered_by_highest_grade
+    students.select(:name,'student_courses.grade as grade').order('grade desc')
+  end
 end
